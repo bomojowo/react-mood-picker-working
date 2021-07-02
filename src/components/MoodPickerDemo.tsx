@@ -1,40 +1,40 @@
 import { useState } from "react";
 
 function MoodPickerDemo(): JSX.Element {
-  const [moodValueFromCurrentRender, queueRerenderWithNewMoodValue] =
+  const [mood, setMood] =
     useState("confused");
 
   const handleMoodChangeToHappy = () => {
    
-    queueRerenderWithNewMoodValue("happy");
+    setMood("happy");
   };
 
   const handleMoodChangeToConfused = () => {
     
-    queueRerenderWithNewMoodValue("confused");
+    setMood("confused");
   };
 
   const handleMoodChangeToSad = () => {
     
-    queueRerenderWithNewMoodValue("sad");
+    setMood("sad");
   };
 
   const handleMoodChangeToAngry = () => {
-    queueRerenderWithNewMoodValue("angry")
+    setMood("angry")
   };
 
   const handleMoodChangeToSick = () => {
-    queueRerenderWithNewMoodValue("sick")
+    setMood("sick")
   };
 
   const handleMoodChangeToLoveStruch = () => {
-    queueRerenderWithNewMoodValue("love struck")
+    setMood("love struck")
   };
 
   return (
     <>
       <h1>Mood Picker Demo</h1>
-      <p>Chosen mood: {moodValueFromCurrentRender.toUpperCase()}</p>
+      <p>Chosen mood: {mood.toUpperCase()}</p>
       <button onClick={handleMoodChangeToHappy}>😀</button>
       <button onClick={handleMoodChangeToConfused}>🤔</button>
       <button onClick={handleMoodChangeToSad}>😢</button>
